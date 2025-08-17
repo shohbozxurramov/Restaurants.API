@@ -18,8 +18,12 @@ public class RestaurantsDbContext: DbContext
             .HasMany(r => r.Dishes)
             .WithOne()
             .HasForeignKey(d => d.RestaurantId);
-            
-        
+        modelBuilder.Entity<Dish>()
+            .Property(d => d.Price)
+            .HasColumnType("decimal(18,2)"); // bu decimal tipini belgilaydi
+
+
+
     }
 
 }

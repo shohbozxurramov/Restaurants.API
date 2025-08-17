@@ -45,7 +45,8 @@ public class RestaurantSeeder(RestaurantsDbContext restaurants) // bu constructo
                 Price = f.Finance.Amount(5, 50)
             }));
         // Bu yerda Faker yordamida 10 ta restaurant yaratamiz
-        return faker.Generate(20); // 10 ta restaurant yaratadi
+            var result = await Task.FromResult(faker.Generate(20)); // 20 ta restaurant yaratadi
+        return result;
     }
 }
 

@@ -1,12 +1,14 @@
 using Restaurants.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Restaurants.Infrastructure.Seeders;
+using Restaurants.Application.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddInfrastructureServices(builder.Configuration);
+builder.Services.AddApplication(); // bu yerda Application qatlamini qo'shamiz
+builder.Services.AddInfrastructureServices(builder.Configuration);// bu yerda Infrastructure qatlamini qo'shamiz
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
